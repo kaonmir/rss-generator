@@ -1,5 +1,5 @@
 import {findAllUlTag, getLeastTextDensityTag} from "./crawl";
-import {getHTMLfromURL, getRSSFeedFromFacebookGroup} from "./parser/parser";
+import {getHTMLfromURL, getRSSFeedFromFacebookGroup} from "./parser/facebook";
 import RSS from "rss";
 import {Builder} from "selenium-webdriver";
 import chrome from "selenium-webdriver/chrome";
@@ -13,7 +13,7 @@ async function run() {
   const url = "https://www.facebook.com/groups/3060223614081153";
   const html = await getHTMLfromURL(url);
 
-  console.log(html.includes("Hi Guys This IS The Aw"));
+  getRSSFeedFromFacebookGroup(html, "http://example.com/sadf09h4rvfub");
 }
 
 run();
